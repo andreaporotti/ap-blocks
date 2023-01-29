@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "ap-blocks/block1",
+	"version": "1.0.0",
+	"title": "Block 1",
+	"category": "ap-blocks",
+	"icon": "smiley",
+	"description": "First block",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "ap-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
