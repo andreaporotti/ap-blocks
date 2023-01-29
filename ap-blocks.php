@@ -24,6 +24,7 @@
 function apblk_register_blocks() {
 	register_block_type( __DIR__ . '/build/block1' );
 	register_block_type( __DIR__ . '/build/block2' );
+	register_block_type( __DIR__ . '/build/contact-card' );
 }
 add_action( 'init', 'apblk_register_blocks' );
 

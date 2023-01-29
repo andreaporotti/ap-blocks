@@ -1,0 +1,21 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@config "../../../tailwind.config.js";
+@tailwind components;
+@tailwind utilities;
+
+.wp-block-ap-blocks-contact-card {
+	.components-placeholder__fieldset {
+		.workplace {
+			@apply mb-2;
+			
+			.components-flex {
+				@apply flex-row justify-start;
+			}
+		}
+	}
+}

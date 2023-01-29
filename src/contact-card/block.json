@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "ap-blocks/contact-card",
+	"version": "1.0.0",
+	"title": "Contact Card",
+	"category": "ap-blocks",
+	"icon": "id",
+	"description": "A card that shows personal contact information.",
+	"keywords": [ "card", "contact" ],
+	"attributes": {
+		"fullName": {
+			"type": "string",
+			"source": "text",
+			"selector": ".apcc-full-name",
+			"default": ""
+		},
+		"jobTitle": {
+			"type": "string",
+			"source": "text",
+			"selector": ".apcc-job-title",
+			"default": ""
+		},
+		"email": {
+			"type": "string",
+			"source": "text",
+			"selector": ".apcc-email",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"source": "text",
+			"selector": ".apcc-description",
+			"default": ""
+		},
+		"imageUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".apcc-image",
+			"attribute": "src"
+		},
+		"imageAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".apcc-image",
+			"attribute": "alt"
+		},
+		"workplace": {
+			"type": "string"
+		},
+		"align": {
+            "type": "string",
+            "default": "center"
+        }
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "ap-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
