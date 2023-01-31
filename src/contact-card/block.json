@@ -11,38 +11,26 @@
 	"attributes": {
 		"fullName": {
 			"type": "string",
-			"source": "text",
-			"selector": ".apcc-full-name",
 			"default": ""
 		},
 		"jobTitle": {
 			"type": "string",
-			"source": "text",
-			"selector": ".apcc-job-title",
 			"default": ""
 		},
 		"email": {
 			"type": "string",
-			"source": "text",
-			"selector": ".apcc-email",
 			"default": ""
 		},
 		"description": {
 			"type": "string",
-			"source": "text",
-			"selector": ".apcc-description",
 			"default": ""
 		},
 		"imageUrl": {
 			"type": "string",
-			"source": "attribute",
-			"selector": ".apcc-image",
 			"attribute": "src"
 		},
 		"imageAlt": {
 			"type": "string",
-			"source": "attribute",
-			"selector": ".apcc-image",
 			"attribute": "alt"
 		},
 		"workplace": {

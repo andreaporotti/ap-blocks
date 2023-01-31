@@ -42,7 +42,7 @@ import ContactCard from './components/ContactCard';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const blockProps = useBlockProps( { className: 'align' + attributes.align } );
+	const blockProps = useBlockProps( { className: 'w-80 p-2 border border-solid border-gray-300 rounded-lg align' + attributes.align } );
 
 	return (
 		<div { ...blockProps }>
