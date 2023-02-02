@@ -1,7 +1,6 @@
 module.exports = {
 	content: [
-		'./*.php',
-		'./src/**/*.{php,js}'
+		'./src/contact-card/**/*.{php,js}'
 	],
 	theme: {
 		extend: {},

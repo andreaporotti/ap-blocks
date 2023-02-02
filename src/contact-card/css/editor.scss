@@ -4,6 +4,8 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@config '../tailwind.contactcard.config.js';
+
 .wp-block-ap-blocks-contact-card {
 	.components-placeholder__fieldset {
 		@apply flex-col;
