@@ -7,5 +7,5 @@
 @config '../tailwind.slider.config.js';
 
 .wp-block-ap-blocks-slider {
-    @apply h-12 border border-dashed border-black rounded-sm;
+    @apply min-h-[48px] border border-dashed border-black rounded-sm;
 }
