@@ -27,8 +27,6 @@ require_once __DIR__ . '/build/contact-card/include/render_contact_card.php';
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function apblk_register_blocks() {
-	register_block_type( __DIR__ . '/build/block1' );
-	register_block_type( __DIR__ . '/build/block2' );
 	register_block_type( __DIR__ . '/build/contact-card', array(
 		'render_callback' => 'apblk_contact_card_render_callback'
 	) );
