@@ -61,27 +61,27 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				<ContactCard { ...attributes } />
 			) : (
 				<Placeholder
-					label={ __( 'Contact Card', 'ap-contact-card' ) }
-					instructions={ __( 'Fill in the contact information', 'ap-contact-card' ) }
+					label={ __( 'Contact Card', 'ap-blocks' ) }
+					instructions={ __( 'Fill in the contact information', 'ap-blocks' ) }
 				>
 					<TextControl
-						label={ __( 'Full name', 'ap-contact-card' ) }
+						label={ __( 'Full name', 'ap-blocks' ) }
 						value={ attributes.fullName }
 						onChange={ ( value ) => setAttributes( { fullName: value } ) }
 					/>
 					<TextControl
-						label={ __( 'Job title', 'ap-contact-card' ) }
+						label={ __( 'Job title', 'ap-blocks' ) }
 						value={ attributes.jobTitle }
 						onChange={ ( value ) => setAttributes( { jobTitle: value } ) }
 					/>
 					<TextControl
-						label={ __( 'Email', 'ap-contact-card' ) }
+						label={ __( 'Email', 'ap-blocks' ) }
 						value={ attributes.email }
 						onChange={ ( value ) => setAttributes( { email: value } ) }
 					/>
 					<RadioControl
 						className={ 'workplace' }
-						label={ __( 'Workplace', 'ap-contact-card') }
+						label={ __( 'Workplace', 'ap-blocks') }
 						selected={ attributes.workplace }
 						options={ [
 							{ label: 'Office', value: 'office' },
@@ -91,7 +91,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( value ) => setAttributes( { workplace: value } ) }
 					/>
 					<TextareaControl
-						label={ __( 'Description', 'ap-contact-card' ) }
+						label={ __( 'Description', 'ap-blocks' ) }
 						value={ attributes.description }
 						onChange={ ( value ) => setAttributes( { description: value } ) }
 					/>
@@ -101,13 +101,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
 							<Button
 								isDestructive
-								label={ __( 'Remove image', 'ap-contact-card' ) }
+								label={ __( 'Remove image', 'ap-blocks' ) }
 								onClick={ () => setAttributes( { 
 									imageAlt: '',
 									imageUrl: '',
 								} ) }
 							>
-								{ __( 'Remove image', 'ap-contact-card' ) }
+								{ __( 'Remove image', 'ap-blocks' ) }
 							</Button>
 						</div>
 					) : (
@@ -115,8 +115,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<MediaPlaceholder
 								icon={ 'format-image' }
 								labels={ {
-									title: __( 'Add image', 'ap-contact-card' ),
-									instructions: __( 'Select the person photo.', 'ap-contact-card' )
+									title: __( 'Add image', 'ap-blocks' ),
+									instructions: __( 'Select the person photo.', 'ap-blocks' )
 								} }
 								accept="image/*"
 								allowedTypes={ ['image'] }
