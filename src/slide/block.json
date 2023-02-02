@@ -6,7 +6,7 @@
 	"title": "Slide",
 	"category": "ap-blocks",
 	"parent": [ "ap-blocks/slider" ],
-	"icon": "welcome-add-page",
+	"icon": "format-image",
 	"description": "A slide for the Slider block.",
 	"keywords": [ "slide", "slider", "slideshow" ],
 	"attributes": {
