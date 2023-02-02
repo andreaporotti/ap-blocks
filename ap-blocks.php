@@ -19,6 +19,7 @@
  */
 require_once __DIR__ . '/build/contact-card/include/render_contact_card.php';
 require_once __DIR__ . '/build/slider/include/render_slider.php';
+require_once __DIR__ . '/build/slide/include/render_slide.php';
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
@@ -28,12 +29,19 @@ require_once __DIR__ . '/build/slider/include/render_slider.php';
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function apblk_register_blocks() {
-	register_block_type( __DIR__ . '/build/contact-card', array(
+	// Contact Card block.
+    register_block_type( __DIR__ . '/build/contact-card', array(
 		'render_callback' => 'apblk_contact_card_render_callback'
 	) );
 
+    // Slider block.
     register_block_type( __DIR__ . '/build/slider', array(
 		'render_callback' => 'apblk_slider_render_callback'
+	) );
+
+    // Slide block.
+    register_block_type( __DIR__ . '/build/slide', array(
+		'render_callback' => 'apblk_slide_render_callback'
 	) );
 }
 add_action( 'init', 'apblk_register_blocks' );
