@@ -1,11 +1,4 @@
 /**
- * WordPress components that create the necessary UI elements for the block
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-components/
- */
- import { Placeholder, TextControl, TextareaControl, Button, RadioControl } from '@wordpress/components';
-
-/**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
@@ -18,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, MediaUploadCheck, MediaPlaceholder, BlockControls, BlockAlignmentToolbar } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -41,7 +34,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	return (
 		<div { ...blockProps }>
-			Slider editor output...
+			<InnerBlocks
+				allowedBlocks={ [ 'ap-blocks/slide' ] }
+			/>
 		</div>
 	);
 }
