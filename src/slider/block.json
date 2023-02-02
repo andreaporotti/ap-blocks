@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"title": "Slider",
 	"category": "ap-blocks",
-	"icon": "leftright",
+	"icon": "images-alt2",
 	"description": "A simple slider.",
 	"keywords": [ "slider", "slideshow" ],
 	"attributes": {
