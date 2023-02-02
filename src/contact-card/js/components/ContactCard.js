@@ -13,8 +13,15 @@ export default function ContactCard( attributes ) {
 		'hybrid': 'Hybrid',
 	}
 
+    // Card alignment.
+    const alignment = {
+        'left' : 'mr-auto',
+        'center' : 'mx-auto',
+        'right' : 'ml-auto',
+    }
+
     return (
-        <>
+        <div className={ 'w-80 p-2 border border-solid border-gray-300 rounded-lg ' + alignment[attributes.align] }>
             { attributes.imageUrl && (
             	<img className="apcc-image w-full rounded-lg" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
             ) }
@@ -32,6 +39,6 @@ export default function ContactCard( attributes ) {
 
             <span className="apcc-label block mt-2 text-sm font-semibold text-gray-500">{ __( 'About', 'ap-contact-card' ) }</span>
             <p className="apcc-description text-base m-0">{ attributes.description }</p>
-        </>
+        </div>
     )
 }

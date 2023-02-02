@@ -9,6 +9,8 @@
 
 .wp-block-ap-blocks-contact-card {
 	.components-placeholder__fieldset {
+		@apply flex-col;
+
 		.workplace {
 			@apply mb-2;
 			

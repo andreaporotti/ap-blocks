@@ -12,7 +12,7 @@ function apblk_contact_card_render_callback( $attr ) {
 
 	ob_start();
 	?>
-		<div <?php echo get_block_wrapper_attributes( array( 'class' => 'w-80 p-2 border border-solid border-gray-300 rounded-lg' ) ) ?>>
+		<div <?php echo get_block_wrapper_attributes( array( 'class' => 'w-80 p-2 border border-solid border-gray-300 rounded-lg align' . $attr['align'] ) ) ?>>
 			<?php if ( $attr['imageUrl'] ) : ?>			
             	<img class="apcc-image w-full rounded-lg" src="<?php echo $attr['imageUrl'] ?>" alt="<?php echo $attr['imageAlt'] ?>" />
 			<?php endif; ?>
