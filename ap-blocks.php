@@ -63,3 +63,24 @@ function apblk_add_block_category( $block_categories, $editor_context ) {
     return $block_categories;
 }
 add_filter( 'block_categories_all', 'apblk_add_block_category', 10, 2 );
+
+/**
+ * Registers plugin assets.
+ */
+function apblk_register_assets() {
+    wp_register_script(
+        'ap-blocks-swiper',
+        plugin_dir_url( __FILE__ ) . 'assets/swiper-bundle.min.js',
+        array(),
+        '9.0.2',
+        true
+    );
+
+    wp_register_style(
+        'ap-blocks-swiper',
+        plugin_dir_url( __FILE__ ) . 'assets/swiper-bundle.min.css',
+        array(),
+        '9.0.2'
+    );
+}
+add_action( 'init', 'apblk_register_assets' );
