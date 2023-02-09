@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,13 +30,10 @@ import '../css/editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps( { className: 'grid grid-cols-4 gap-2' } );
+	const innerBlocksProps = useInnerBlocksProps( blockProps, { allowedBlocks: [ 'ap-blocks/slide' ], orientation: 'horizontal' } );
 
 	return (
-		<div { ...blockProps }>
-			<InnerBlocks
-				allowedBlocks={ [ 'ap-blocks/slide' ] }
-			/>
-		</div>
+		<div {...innerBlocksProps} />
 	);
 }

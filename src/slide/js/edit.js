@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
- import { Placeholder, Button } from '@wordpress/components';
+ import { Button } from '@wordpress/components';
 
 /**
  * Retrieves the translation of text.
@@ -43,15 +43,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<div { ...blockProps }>
 			{ attributes.imageUrl && !isSelected ? (
 				// Preview the slide when the block is not selected.
-				<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+				<img className='!w-full !h-full object-cover aspect-square' src={ attributes.imageUrl } alt={ attributes.imageAlt } />
 			) : (
-				<Placeholder
-					label={ __( 'Slide', 'ap-blocks' ) }
-					instructions={ __( 'Insert slide content', 'ap-blocks' ) }
-				>
+				<>
 					{ attributes.imageUrl ? (
-						<div>
-							<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+						<div className='relative h-full'>
+							<img className='!w-full !h-full object-cover aspect-square' src={ attributes.imageUrl } alt={ attributes.imageAlt } />
 							<Button
 								isDestructive
 								label={ __( 'Remove image', 'ap-blocks' ) }
@@ -59,6 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									imageAlt: '',
 									imageUrl: '',
 								} ) }
+								className="absolute left-0 bottom-0 bg-white"
 							>
 								{ __( 'Remove image', 'ap-blocks' ) }
 							</Button>
@@ -69,7 +67,6 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								icon={ 'format-image' }
 								labels={ {
 									title: __( 'Add image', 'ap-blocks' ),
-									instructions: __( 'Select an image.', 'ap-blocks' )
 								} }
 								accept="image/*"
 								allowedTypes={ ['image'] }
@@ -78,10 +75,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									imageAlt: image.alt,
 									imageUrl: image.url,
 								} ) }
+								className='!min-h-full'
 							/>
 						</MediaUploadCheck>
 					) }
-				</Placeholder>
+				</>
 			) }
 		</div>
 	);
