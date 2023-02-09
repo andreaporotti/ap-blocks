@@ -9,6 +9,14 @@
 	"description": "A simple slider.",
 	"keywords": [ "slider", "slideshow" ],
 	"attributes": {
+		"slidesPerView": {
+			"type": "integer",
+			"default": 1
+		},
+		"loop": {
+			"type": "boolean",
+			"default": false
+		}
 	},
 	"supports": {
 		"html": false

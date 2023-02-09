@@ -1,4 +1,11 @@
 /**
+ * WordPress components that create the necessary UI elements for the block
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-components/
+ */
+import { PanelBody, RangeControl, CheckboxControl } from '@wordpress/components';
+
+/**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
@@ -11,7 +18,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps, InspectorControls } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -34,6 +41,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const innerBlocksProps = useInnerBlocksProps( blockProps, { allowedBlocks: [ 'ap-blocks/slide' ], orientation: 'horizontal' } );
 
 	return (
-		<div {...innerBlocksProps} />
+		<>
+			<InspectorControls>
+				<PanelBody
+					title={ __( 'Settings', 'ap-blocks' ) }
+					initialOpen={ true }
+				>
+					<RangeControl
+						label={ __( 'Slides per view', 'ap-blocks' ) }
+						initialPosition={attributes.slidesPerView}
+						max={6}
+						min={1}
+						onChange={ ( value ) => { setAttributes( { slidesPerView: value } ) } }
+					/>
+
+					<CheckboxControl
+						label={ __( 'Loop', 'ap-blocks' ) }
+						checked={ attributes.loop }
+						onChange={ ( checked ) => { setAttributes( { loop: checked } ) } }
+					/>
+				</PanelBody>
+			</InspectorControls>
+
+			<div {...innerBlocksProps} />
+		</>
 	);
 }

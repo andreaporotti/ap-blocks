@@ -8,6 +8,13 @@ function apblk_slider_render_callback( $attr, $content ) {
 
 	ob_start();
 	?>
+		<script>
+			const apBlocksSliderConfig = {
+				slidesPerView: <?php echo $attr['slidesPerView'] ?>,
+				loop: <?php echo ( $attr['loop'] == 1 ) ? 'true' : 'false' ?>
+			}
+		</script>
+
 		<div <?php echo get_block_wrapper_attributes( array( 'class' => 'relative' ) ) ?>>
 			<!-- Slider main container -->
 			<div class="swiper h-[400px] border border-solid border-gray-300 rounded-lg flex justify-center items-center">
