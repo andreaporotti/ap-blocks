@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
-import { PanelBody, RangeControl, CheckboxControl } from '@wordpress/components';
+import { PanelBody, RangeControl, CheckboxControl, TextControl } from '@wordpress/components';
 
 /**
  * Retrieves the translation of text.
@@ -49,16 +49,35 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				>
 					<RangeControl
 						label={ __( 'Slides per view', 'ap-blocks' ) }
-						initialPosition={attributes.slidesPerView}
+						initialPosition={ attributes.slidesPerView }
 						max={6}
 						min={1}
 						onChange={ ( value ) => { setAttributes( { slidesPerView: value } ) } }
+					/>
+
+					<TextControl
+						label={ __( 'Space between slides', 'ap-blocks' ) }
+						help={ __( 'Insert a number of pixels', 'ap-blocks' ) }
+						onChange={ ( value ) => { setAttributes( { spaceBetween: parseInt(value) } ) } }
+						value={ attributes.spaceBetween }
 					/>
 
 					<CheckboxControl
 						label={ __( 'Loop', 'ap-blocks' ) }
 						checked={ attributes.loop }
 						onChange={ ( checked ) => { setAttributes( { loop: checked } ) } }
+					/>
+
+					<CheckboxControl
+						label={ __( 'Pagination', 'ap-blocks' ) }
+						checked={ attributes.pagination }
+						onChange={ ( checked ) => { setAttributes( { pagination: checked } ) } }
+					/>
+
+					<CheckboxControl
+						label={ __( 'Navigation', 'ap-blocks' ) }
+						checked={ attributes.navigation }
+						onChange={ ( checked ) => { setAttributes( { navigation: checked } ) } }
 					/>
 				</PanelBody>
 			</InspectorControls>

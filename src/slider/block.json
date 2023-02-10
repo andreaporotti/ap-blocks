@@ -13,7 +13,19 @@
 			"type": "integer",
 			"default": 1
 		},
+		"spaceBetween": {
+			"type": "integer",
+			"default": 0
+		},
 		"loop": {
+			"type": "boolean",
+			"default": false
+		},
+		"pagination": {
+			"type": "boolean",
+			"default": false
+		},
+		"navigation": {
 			"type": "boolean",
 			"default": false
 		}
