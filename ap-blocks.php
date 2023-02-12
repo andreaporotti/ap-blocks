@@ -15,11 +15,6 @@
  */
 
 /**
- * Include required files.
- */
-require_once __DIR__ . '/build/contact-card/include/render_contact_card.php';
-
-/**
  * Registers the block using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
@@ -28,9 +23,7 @@ require_once __DIR__ . '/build/contact-card/include/render_contact_card.php';
  */
 function apblk_register_blocks() {
 	// Contact Card block.
-    register_block_type( __DIR__ . '/build/contact-card', array(
-		'render_callback' => 'apblk_contact_card_render_callback'
-	) );
+    register_block_type( __DIR__ . '/build/contact-card' );
 
     // Slider block.
     register_block_type( __DIR__ . '/build/slider' );
