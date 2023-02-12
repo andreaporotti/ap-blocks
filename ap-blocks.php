@@ -57,7 +57,7 @@ add_filter( 'block_categories_all', 'apblk_add_block_category', 10, 2 );
 function apblk_register_assets() {
     wp_register_script(
         'ap-blocks-swiper',
-        plugin_dir_url( __FILE__ ) . 'assets/swiper-bundle.min.js',
+        plugin_dir_url( __FILE__ ) . 'public/swiper/swiper-bundle.min.js',
         array(),
         '9.0.2',
         true
@@ -65,7 +65,7 @@ function apblk_register_assets() {
 
     wp_register_style(
         'ap-blocks-swiper',
-        plugin_dir_url( __FILE__ ) . 'assets/swiper-bundle.min.css',
+        plugin_dir_url( __FILE__ ) . 'public/swiper/swiper-bundle.min.css',
         array(),
         '9.0.2'
     );
