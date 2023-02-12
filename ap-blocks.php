@@ -18,7 +18,6 @@
  * Include required files.
  */
 require_once __DIR__ . '/build/contact-card/include/render_contact_card.php';
-require_once __DIR__ . '/build/slide/include/render_slide.php';
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
@@ -37,9 +36,7 @@ function apblk_register_blocks() {
     register_block_type( __DIR__ . '/build/slider' );
 
     // Slide block.
-    register_block_type( __DIR__ . '/build/slide', array(
-		'render_callback' => 'apblk_slide_render_callback'
-	) );
+    register_block_type( __DIR__ . '/build/slide' );
 }
 add_action( 'init', 'apblk_register_blocks' );
 
